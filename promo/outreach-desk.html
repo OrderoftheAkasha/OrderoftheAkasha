@@ -1,0 +1,256 @@
+<title>Akashic Monk Outreach Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#0a1024; --sheet:#0e1630; --sheet2:#121c3b; --line:#22305a;
+  --text:#eef2ff; --muted:#93a0c6; --gold:#f5c542; --red:#ef4452; --green:#3ecf8e; --amber:#f59e0b;
+  --display:'Anton',Impact,'Arial Narrow',sans-serif;
+  --body:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.55}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.page{max-width:980px;margin:0 auto;padding-inline:18px;padding-block:24px 60px}
+header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;border-bottom:1.5px solid var(--text);padding-bottom:14px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,7vw,68px);line-height:.9;margin:0;text-transform:uppercase}
+h1 span{color:var(--red)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.progress{min-width:220px}
+.progress b{font-family:var(--display);font-weight:400;font-size:34px;color:var(--gold);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);margin-top:6px}
+.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+.idcard{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 6px;font-family:var(--mono);font-size:13px}
+.idcard span{color:var(--muted)}
+.how{color:#cfd6f0;max-width:70ch;margin:8px 0 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 14px}
+.filters button{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);padding:8px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--text);color:var(--ink);border-color:var(--text)}
+.list{display:grid;gap:12px}
+.item{background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--line)}
+.item[data-state="sent"]{border-left-color:var(--green)}
+.item[data-state="sent"] .name{text-decoration:line-through;text-decoration-color:var(--green)}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:14px 16px}
+.chk{width:22px;height:22px;accent-color:var(--green);margin-top:3px}
+.name{font-weight:800;font-size:17px}
+.sub{color:var(--muted);font-size:13px;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font:700 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);color:var(--muted)}
+.tag.radio{color:var(--gold);border-color:var(--gold)}
+.tag.cap{color:var(--amber);border-color:var(--amber)}
+.tag.google{color:#8ab4ff;border-color:#8ab4ff}
+.actions{display:flex;flex-direction:column;gap:6px;align-items:stretch;min-width:150px}
+.btn{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 12px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer;text-decoration:none}
+.btn.solid{background:var(--gold);color:#141414}
+details{border-top:1px dashed var(--line)}
+summary{cursor:pointer;padding:10px 16px;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.msg{padding:0 16px 16px}
+.field{display:grid;grid-template-columns:90px 1fr auto;gap:8px;align-items:center;margin-bottom:8px}
+.field label{font:700 10px var(--mono);letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.field output{font-family:var(--mono);font-size:13px;background:var(--sheet2);border:1px solid var(--line);padding:7px 10px;overflow-wrap:anywhere}
+.mini{font:700 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 8px;background:transparent;color:var(--gold);border:1px solid var(--line);cursor:pointer}
+pre{white-space:pre-wrap;font-family:var(--body);font-size:14px;background:var(--sheet2);border:1px solid var(--line);padding:12px 14px;margin:0 0 8px;max-height:320px;overflow:auto}
+.note{font-size:13px;color:var(--amber);margin:0 0 10px}
+@media(max-width:640px){.row{grid-template-columns:auto 1fr}.actions{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;min-width:0}.actions .btn{flex:1}.field{grid-template-columns:1fr auto}.field label{grid-column:1/-1}}
+footer{margin-top:30px;color:var(--muted);font-size:13px}
+</style>
+
+<div class="page">
+  <header class="top">
+    <div>
+      <div class="kicker">Akashic Monk · PR command center</div>
+      <h1>Outreach <span>Desk</span></h1>
+    </div>
+    <div class="progress" aria-live="polite">
+      <div class="kicker" style="color:var(--muted)">Sent</div>
+      <b id="count">0 / 0</b>
+      <div class="bar"><i id="barFill"></i></div>
+    </div>
+  </header>
+  <div class="idcard">
+    <div><span>Name</span> Akashic Monk</div>
+    <div><span>Email</span> gx3chaosrecords@gmail.com</div>
+    <div><span>Press kit</span> <a href="https://claude.ai/artifact/UijsUSqm8Qq8ZtKQbMt2Lr" target="_blank" rel="noopener">open ↗</a></div>
+  </div>
+  <p class="how">How it works: tap <b>Open</b>, copy each field into the form or email, solve any CAPTCHA, send, then tick the box. Ticks are saved in this browser only. Fill in <b>[CLEAN SINGLE]</b> with a radio-safe song before you send to radio.</p>
+
+  <div class="filters" role="group" aria-label="Filter">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="radio" aria-pressed="false">Radio</button>
+    <button type="button" data-f="podcast" aria-pressed="false">Podcasts</button>
+    <button type="button" data-f="label" aria-pressed="false">Labels &amp; A&amp;R</button>
+    <button type="button" data-f="todo" aria-pressed="false">Not sent</button>
+  </div>
+  <div class="list" id="list"></div>
+  <footer>Contacts come from each outlet's own public page, checked Sept 23, 2026. Radio wants clean, radio-ready audio.</footer>
+</div>
+
+<script>
+const ME = {name:"Akashic Monk", email:"gx3chaosrecords@gmail.com"};
+const KIT = "https://claude.ai/artifact/UijsUSqm8Qq8ZtKQbMt2Lr";
+const LINKS = `Press kit: ${KIT}
+Apple Music: https://music.apple.com/us/artist/akashic-monk/1258188977
+YouTube: https://www.youtube.com/@Akashic_Monk
+Past interview: https://www.youtube.com/watch?v=_F3rWx9XIRM
+IG: @akashic_monk`;
+const SIGN = `Akashic Monk\n${ME.email}`;
+
+const ITEMS = [
+ {id:"wjcu", kind:"radio", name:"WJCU 88.7 FM · 808s and Mixtapes", sub:"John Carroll University. Student hip-hop show that plays up-and-coming rap, Tuesdays 10 PM.", tags:["radio","email"],
+  open:"https://www.wjcu.org/contact", to:"wjcu.md@gmail.com", phone:"216-397-4937 (genre music director)",
+  subject:"Cleveland hip-hop for 808s and Mixtapes: Akashic Monk",
+  body:`Hi WJCU music team and 808s and Mixtapes crew,
+
+I'm Akashic Monk, an independent hip-hop artist from Cleveland (the 216) with 41 releases since 2016. My 22-track album Static Signal came out this summer, and my new album American Blueprint drops this winter.
+
+I'd love for you to consider my clean single "[CLEAN SINGLE]" for 808s and Mixtapes or any genre show. My angle: the 216's crypto-coding gamer rapper. I write bars, write code and I'm building a fantasy game universe, Order of the Akasha.
+
+Clean MP3: [LINK TO CLEAN MP3]
+${LINKS}
+
+Happy to come on air for an interview or a live freestyle.
+
+${SIGN}`},
+ {id:"wruw", kind:"radio", name:"WRUW 91.1 FM · Studio-A-Rama", sub:"Case Western's station. Live in-studio sessions for local acts. Needs 3+ songs, bio, photo, website, contact.", tags:["radio","email"],
+  open:"https://wruw.org/wruw-is-now-accepting-submissions-for-this-years-studio-a-rama/", to:"studioarama@wruw.org",
+  subject:"Studio-A-Rama submission: Akashic Monk (Cleveland hip-hop)",
+  note:"Attach or link 3 songs and a photo. The bio, website and contact are below.",
+  body:`Hi WRUW,
+
+Submitting Akashic Monk for Studio-A-Rama and for airplay on Hip-Hop on the 216 Block.
+
+Artist: Akashic Monk (solo MC, Cleveland, OH)
+Songs (3): [SONG 1 LINK] · [SONG 2 LINK] · [SONG 3 LINK]
+Photo: [PHOTO LINK]
+Website: https://akashicmonk.blog
+
+Bio: Akashic Monk is an independent hip-hop artist from Cleveland and founder of Akashic Entertainment®. Since 2016 the Monk has released 41 records, including the 22-track album Static Signal, blending heavy 808s, spiritual lyricism and pop-rock energy with a builder's mindset: code, crypto and gaming. American Blueprint arrives Winter 2026.
+
+${LINKS}
+
+${SIGN}`},
+ {id:"z1079", kind:"radio", name:"Z107.9 · Dope or Nope with Incognito", sub:"Cleveland's hip-hop station. Local artist segment. Clean, radio-ready music only. The page dates from 2018, so confirm it's still running.", tags:["radio","dm"],
+  open:"https://zhiphopcleveland.com/ohios-own-dope-or-nope-with-incognito/", to:"DM @z1079 on Instagram",
+  subject:"Dope or Nope submission: Akashic Monk",
+  body:`Yo Incognito and Z107.9! Cleveland artist Akashic Monk here. I want to be on Dope or Nope. Clean, radio-ready single "[CLEAN SINGLE]": [LINK]. 41 releases since 2016, new album American Blueprint this winter. Press kit: ${KIT} 🙏 216 stand up.`},
+ {id:"wzak", kind:"radio", name:"93.1 WZAK · Z107.9 on-air talent", sub:"Urban radio. There's no public submission form, so tag the shows and DM the personalities with a clean single.", tags:["radio","dm"],
+  open:"https://wzakcleveland.com/", to:"DM on Instagram / Facebook",
+  subject:"Local artist spotlight: Akashic Monk",
+  body:`Hey! Cleveland's own Akashic Monk here: hip-hop with pop-rock energy, 41 releases, new album American Blueprint this winter. Would love a spin or a local spotlight for my clean single "[CLEAN SINGLE]": [LINK]. Press kit: ${KIT}. Appreciate you holding down the 216 🙏`},
+ {id:"labelradar", kind:"label", name:"LabelRadar · demo pool for 3,900+ labels", sub:"Free. Upload a track, pick your best 20-second clip, then submit to the public pool (all labels) or privately to one label. Needs a free account + your audio file.", tags:["label","account"],
+  open:"https://www.labelradar.com/",
+  subject:null, body:`Akashic Monk: independent hip-hop artist from Cleveland, OH. 41 releases and 113 tracks since 2016; 22-track album Static Signal (2026); new album American Blueprint drops Winter 2026. Heavy 808s, spiritual lyricism, pop-rock crossover. The 216's crypto-coding gamer rapper: music, AI videos, crypto series and a game universe (Order of the Akasha), all self-built under Akashic Entertainment®.
+
+${LINKS}`},
+ {id:"groover", kind:"label", name:"Groover · hip-hop labels & A&R", sub:"Paid per contact (credits). Every label or curator must reply within 7 days or you get your credit back. Pick hip-hop/rap labels, 5–10 per single.", tags:["label","paid"],
+  open:"https://groover.co/en/influencer/list/tags/hip-hop-rap/label/",
+  subject:null, body:`Hey! Akashic Monk from Cleveland, OH. "[SINGLE]" is the lead single from my new album American Blueprint (Winter 2026). I've built everything independently since 2016: 41 releases, 113 tracks, my own label Akashic Entertainment®, AI music videos, a 36-episode vlog, and a game universe, Order of the Akasha. I'm looking for a label or partner to scale the rollout. Press kit: ${KIT}`},
+ {id:"submithub", kind:"label", name:"SubmitHub · labels, blogs, playlists", sub:"Standard credits cost money; free credits get slower replies. Filter to hip-hop labels and blogs. Use the same pitch as Groover.", tags:["label","paid"],
+  open:"https://www.submithub.com/",
+  subject:null, body:`Akashic Monk, Cleveland OH. "[SINGLE]" is the first taste of American Blueprint (Winter 2026). 41 independent releases since 2016, heavy 808s + spiritual lyricism + pop-rock hooks. Coder, gamer, crypto builder. Press kit: ${KIT}`},
+ {id:"unitedmasters", kind:"label", name:"UnitedMasters · SELECT / PARTNER", sub:"Distribution where you keep 100% of masters and streaming royalties. SELECT is about $60/yr and includes brand & sync deal access. PARTNER (hands-on artist services) is invite-only, so grow on SELECT first.", tags:["label","apply"],
+  open:"https://unitedmasters.com/en/artists",
+  subject:null, body:`Artist bio for your profile: Akashic Monk is an independent hip-hop artist from Cleveland, Ohio, and founder of Akashic Entertainment®. Since 2016 the Monk has released 41 records, including the 22-track album Static Signal, blending heavy 808s, spiritual lyricism and pop-rock energy with a builder's mindset: code, crypto and gaming. American Blueprint arrives Winter 2026.`},
+ {id:"sdtw", kind:"podcast", name:"Super Duty Tough Work", sub:"Blueprint & Illogic (Ohio). Indie hip-hop career podcast. Contact form with hCaptcha.", tags:["form","captcha"],
+  open:"https://superdutytoughwork.net/pages/contact",
+  subject:null, body:`Hey Blueprint & Illogic,
+
+Guest pitch from a fellow Ohio MC. I'm Akashic Monk, an independent hip-hop artist from Cleveland with 41 releases since 2016, running my own label (Akashic Entertainment). Your conversations about building a real independent career are a big reason I kept going.
+
+What I'd bring: ten years of staying independent, running a one-person label with tech and AI (I code my own site and make AI music videos), building a fantasy game universe called Order of the Akasha, and my new album American Blueprint dropping this winter. Happy to freestyle live on anything you throw at me.
+
+${LINKS}
+
+Appreciate you both. Hope to build.
+${SIGN}`},
+ {id:"hhh", kind:"podcast", name:"Heritage Hip-Hop Podcast", sub:"Host Karev. Interviews independent hip-hop artists. Contact form: First name “Akashic”, Last name “Monk”.", tags:["form"],
+  open:"https://www.heritagehiphop.com/contact",
+  subject:null, body:`Hey Karev,
+
+Guest pitch for the Heritage Hip-Hop Podcast. I'm Akashic Monk, an independent hip-hop artist from Cleveland, OH with 41 releases since 2016 and my own label, Akashic Entertainment. My 22-track album Static Signal came out this summer, and my next album, American Blueprint, drops this winter.
+
+Angle: the 216's crypto-coding gamer rapper. I code my own site, make AI music videos, run a crypto build series on YouTube, and I'm building a fantasy game universe (Order of the Akasha). We could talk staying independent for 10 years, using tech as a one-person label, and I'll freestyle live on any topic.
+
+${LINKS}
+
+Thanks for what you do for independent hip-hop.
+${SIGN}`},
+ {id:"locle", kind:"podcast", name:"LoCLE Grown (Cleveland)", sub:"Underground NE Ohio artists: interview + live performance. Wants Midwest artists with 2+ solid originals who play shows. Google Form, sign in with your Google account.", tags:["form","google"],
+  open:"https://forms.gle/DpuDAkkbDYo56mr26", to:"or email loclegrown@gmail.com",
+  subject:"LoCLE Grown guest submission: Akashic Monk",
+  body:`I'm Akashic Monk, an independent hip-hop artist from Cleveland with 41 releases since 2016, including the 22-track album Static Signal (2026). New album American Blueprint drops this winter.
+
+What makes me stand out: I'm the 216's crypto-coding gamer rapper. I write bars and code, make AI music videos, and I'm building a fantasy game universe, Order of the Akasha. I'd bring a wordplay-heavy live set and freestyles.
+
+${LINKS}`},
+ {id:"web3", kind:"podcast", name:"Web3 with Sam Kamani", sub:"Web3 & AI podcast. “Apply to Be a Guest” form with reCAPTCHA.", tags:["form","captcha"],
+  open:"https://www.web3pod.xyz/#cta",
+  subject:null, body:`Independent hip-hop artist and builder from Cleveland, Ohio. I run my own label (Akashic Entertainment), code my own site, make AI music videos, run a crypto build series on YouTube, and I'm building a fantasy game universe, Order of the Akasha. 41 releases since 2016; new album American Blueprint drops Winter 2026.
+
+Topics: what "independent" means when an artist owns the whole stack, where crypto actually helps creators and where it doesn't, and AI as a one-person label. I can close with a live freestyle.
+
+${LINKS}`},
+ {id:"nerds", kind:"podcast", name:"Nerds Sip Podcast", sub:"Gaming podcast that openly invites indie creators to promote their games.", tags:["email"],
+  open:"https://nerdssippodcast.itch.io", to:"nerdssip@gmail.com",
+  subject:"Rapper + game world builder: Order of the Akasha (and a live freestyle)",
+  body:`Hey Nerds Sip crew,
+
+I'm Akashic Monk, a hip-hop artist from Cleveland, Ohio, building Order of the Akasha: a fantasy universe of guardians, mystic warriors and a living library of all knowledge, told through music, film and gaming.
+
+Segment idea: you name the game you're playing, I freestyle a boss-fight verse about it on the spot. Then we talk soundtracking your own game world as an indie creator. New album American Blueprint drops this winter.
+
+${LINKS}
+
+${SIGN}`}
+];
+
+const KEY="akm-outreach-sent";
+let sent={}; try{sent=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(sent))}catch(e){}};
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let filter="all";
+
+function field(label,val,key){return `<div class="field"><label>${label}</label><output id="${key}">${esc(val)}</output><button class="mini" type="button" data-copy="${key}">Copy</button></div>`}
+function render(){
+  const list=document.getElementById("list");
+  list.innerHTML=ITEMS.filter(it=>filter==="all"||(filter==="todo"?!sent[it.id]:it.kind===filter)).map(it=>`
+   <article class="item" data-state="${sent[it.id]?"sent":"todo"}">
+    <div class="row">
+      <input class="chk" type="checkbox" id="c-${it.id}" data-id="${it.id}" ${sent[it.id]?"checked":""} aria-label="Mark ${esc(it.name)} as sent">
+      <div><label for="c-${it.id}" class="name">${esc(it.name)}</label><div class="sub">${esc(it.sub)}</div>
+        <div class="tags">${it.tags.map(t=>`<span class="tag ${t==="radio"||t==="label"?"radio":t==="captcha"?"cap":t==="google"?"google":""}">${t==="captcha"?"CAPTCHA: you solve":t==="google"?"Google sign-in":t}</span>`).join("")}${sent[it.id]?`<span class="tag" style="color:var(--green);border-color:var(--green)">Sent ${esc(sent[it.id])}</span>`:""}</div></div>
+      <div class="actions"><a class="btn solid" href="${it.open}" target="_blank" rel="noopener">Open ↗</a><button class="btn" type="button" data-copy="b-${it.id}">Copy message</button></div>
+    </div>
+    <details><summary>Message &amp; fields</summary><div class="msg">
+      ${it.note?`<p class="note">${esc(it.note)}</p>`:""}
+      ${field("Name",ME.name,"n-"+it.id)}${field("Email",ME.email,"e-"+it.id)}
+      ${it.to?field("Send to",it.to,"t-"+it.id):""}${it.phone?field("Phone",it.phone,"p-"+it.id):""}
+      ${it.subject?field("Subject",it.subject,"s-"+it.id):""}
+      <pre id="b-${it.id}">${esc(it.body)}</pre>
+    </div></details>
+   </article>`).join("");
+  const n=Object.keys(sent).filter(k=>ITEMS.some(i=>i.id===k)).length;
+  document.getElementById("count").textContent=`${n} / ${ITEMS.length}`;
+  document.getElementById("barFill").style.width=(n/ITEMS.length*100)+"%";
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-copy]"); if(!b) return;
+  const el=document.getElementById(b.dataset.copy); const orig=b.textContent;
+  const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent=orig,1400)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected";setTimeout(()=>b.textContent=orig,1800)};
+  try{navigator.clipboard.writeText(el.textContent).then(done,sel)}catch(err){sel()}
+});
+document.addEventListener("change",e=>{
+  const c=e.target.closest(".chk"); if(!c) return;
+  if(c.checked) sent[c.dataset.id]=new Date().toLocaleDateString("en-US",{month:"short",day:"numeric"}); else delete sent[c.dataset.id];
+  save(); render();
+});
+document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{
+  filter=b.dataset.f; document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b)); render();
+}));
+render();
+</script>
