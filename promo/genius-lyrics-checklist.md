@@ -1,4 +1,4 @@
-# Genius Lyrics Checklist: Akashic Monk (113 tracks)
+# Genius Lyrics Checklist: Akashic Monk (every song on Apple Music)
 
 Genius blocks automated posting, so this has to come from **your** Genius account. Steps:
 
@@ -9,6 +9,8 @@ Genius blocks automated posting, so this has to come from **your** Genius accoun
 5. Tick the box here when done.
 
 **Faster route:** paste your lyrics to me in chat (a few songs at a time) and I'll return them formatted for Genius, with section headers and suggested annotations, ready to copy in.
+
+A few songs appear twice (as a single and on an album). Add each song once and link both releases on Genius.
 
 Priority order: *Static Signal* and the 2026 singles first (people search new music), then *Soul Savior* and *Thoughts of a Wizard*.
 
