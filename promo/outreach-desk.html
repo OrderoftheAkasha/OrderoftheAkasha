@@ -76,7 +76,7 @@ footer{margin-top:30px;color:var(--muted);font-size:13px}
     <div><span>Email</span> gx3chaosrecords@gmail.com</div>
     <div><span>Press kit</span> <a href="https://claude.ai/artifact/UijsUSqm8Qq8ZtKQbMt2Lr" target="_blank" rel="noopener">open ↗</a></div>
   </div>
-  <p class="how">How it works: tap <b>Open</b>, copy each field into the form or email, solve any CAPTCHA, send, then tick the box. Ticks are saved in this browser only. Every message already includes 3 of your 2025–2026 tracks. For radio, make sure those versions are clean (no profanity).</p>
+  <p class="how">How it works: for each outlet, tap <b>Open ↗</b> to go to the form or page, then tap <b>Copy</b> next to each field and paste it into the form or email. Solve any CAPTCHA, send, then tick the box. Ticks are saved in this browser only. Every message already includes 3 of your 2025–2026 tracks. For radio, make sure those versions are clean (no profanity).</p>
 
   <div class="filters" role="group" aria-label="Filter">
     <button type="button" data-f="all" aria-pressed="true">All</button>
@@ -107,7 +107,7 @@ IG: @akashic_monk`;
 const SIGN = `Akashic Monk\n${ME.email}`;
 
 const ITEMS = [
- {id:"wjcu", kind:"radio", name:"WJCU 88.7 FM · genre music director", sub:"John Carroll University (University Heights). The station's 2026 contact page says to send non-Triple-A music to the genre music director.", tags:["radio","email"],
+ {id:"wjcu", kind:"radio", name:"WJCU 88.7 FM · genre music director", sub:"John Carroll University (University Heights). The station's contact page says to send non-Triple-A music to the genre music director.", tags:["radio","email"],
   open:"https://www.wjcu.org/contact", to:"wjcu.md@gmail.com", phone:"216-397-4937 (genre music director)",
   subject:"Cleveland hip-hop for WJCU airplay: Akashic Monk",
   body:`Hi WJCU music team,
@@ -193,7 +193,7 @@ function render(){
         <div class="tags">${it.tags.map(t=>`<span class="tag ${t==="radio"||t==="label"?"radio":t==="captcha"?"cap":t==="google"?"google":""}">${t==="captcha"?"CAPTCHA: you solve":t==="google"?"Google sign-in":t}</span>`).join("")}${sent[it.id]?`<span class="tag" style="color:var(--green);border-color:var(--green)">Sent ${esc(sent[it.id])}</span>`:""}</div></div>
       <div class="actions"><a class="btn solid" href="${it.open}" target="_blank" rel="noopener">Open ↗</a><button class="btn" type="button" data-copy="b-${it.id}">Copy message</button></div>
     </div>
-    <details><summary>Message &amp; fields</summary><div class="msg">
+    <details open><summary>Message &amp; fields (tap to hide)</summary><div class="msg">
       ${it.note?`<p class="note">${esc(it.note)}</p>`:""}
       ${field("Name",ME.name,"n-"+it.id)}${field("Email",ME.email,"e-"+it.id)}
       ${it.to?field("Send to",it.to,"t-"+it.id):""}${it.phone?field("Phone",it.phone,"p-"+it.id):""}
