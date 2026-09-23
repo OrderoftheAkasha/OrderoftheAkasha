@@ -76,7 +76,7 @@ footer{margin-top:30px;color:var(--muted);font-size:13px}
     <div><span>Email</span> gx3chaosrecords@gmail.com</div>
     <div><span>Press kit</span> <a href="https://claude.ai/artifact/UijsUSqm8Qq8ZtKQbMt2Lr" target="_blank" rel="noopener">open ↗</a></div>
   </div>
-  <p class="how">How it works: tap <b>Open</b>, copy each field into the form or email, solve any CAPTCHA, send, then tick the box. Ticks are saved in this browser only. Fill in <b>[CLEAN SINGLE]</b> with a radio-safe song before you send to radio.</p>
+  <p class="how">How it works: tap <b>Open</b>, copy each field into the form or email, solve any CAPTCHA, send, then tick the box. Ticks are saved in this browser only. Every message already includes 3 of your 2025–2026 tracks. For radio, make sure those versions are clean (no profanity).</p>
 
   <div class="filters" role="group" aria-label="Filter">
     <button type="button" data-f="all" aria-pressed="true">All</button>
@@ -86,13 +86,20 @@ footer{margin-top:30px;color:var(--muted);font-size:13px}
     <button type="button" data-f="todo" aria-pressed="false">Not sent</button>
   </div>
   <div class="list" id="list"></div>
-  <footer>Contacts come from each outlet's own public page, checked Sept 23, 2026. Radio wants clean, radio-ready audio.</footer>
+  <footer>Contacts come from each outlet's own public page, checked Sept 23, 2026. Only outlets with activity in 2025–2026 are listed.</footer>
 </div>
 
 <script>
 const ME = {name:"Akashic Monk", email:"gx3chaosrecords@gmail.com"};
 const KIT = "https://claude.ai/artifact/UijsUSqm8Qq8ZtKQbMt2Lr";
-const LINKS = `Press kit: ${KIT}
+const SONGS = `🎧 3 recent tracks:
+1. "UnderDog Dreams" (Jul 2026): https://music.apple.com/us/album/underdog-dreams-single/6787865672
+2. "100 Million Dollar Deal" (Jul 2026): https://music.apple.com/us/album/100-million-dollar-deal-single/6787861590
+3. "Akashic Agent" (Nov 2025), official video: https://www.youtube.com/watch?v=XKLd39USV3I
+Full album Static Signal (Jul 2026, 22 tracks): https://music.apple.com/us/album/static-signal/6795564641`;
+const LINKS = `${SONGS}
+
+Press kit: ${KIT}
 Apple Music: https://music.apple.com/us/artist/akashic-monk/1258188977
 YouTube: https://www.youtube.com/@Akashic_Monk
 Past interview: https://www.youtube.com/watch?v=_F3rWx9XIRM
@@ -100,47 +107,20 @@ IG: @akashic_monk`;
 const SIGN = `Akashic Monk\n${ME.email}`;
 
 const ITEMS = [
- {id:"wjcu", kind:"radio", name:"WJCU 88.7 FM · 808s and Mixtapes", sub:"John Carroll University. Student hip-hop show that plays up-and-coming rap, Tuesdays 10 PM.", tags:["radio","email"],
+ {id:"wjcu", kind:"radio", name:"WJCU 88.7 FM · genre music director", sub:"John Carroll University (University Heights). The station's 2026 contact page says to send non-Triple-A music to the genre music director.", tags:["radio","email"],
   open:"https://www.wjcu.org/contact", to:"wjcu.md@gmail.com", phone:"216-397-4937 (genre music director)",
-  subject:"Cleveland hip-hop for 808s and Mixtapes: Akashic Monk",
-  body:`Hi WJCU music team and 808s and Mixtapes crew,
+  subject:"Cleveland hip-hop for WJCU airplay: Akashic Monk",
+  body:`Hi WJCU music team,
 
 I'm Akashic Monk, an independent hip-hop artist from Cleveland (the 216) with 41 releases since 2016. My 22-track album Static Signal came out this summer, and my new album American Blueprint drops this winter.
 
-I'd love for you to consider my clean single "[CLEAN SINGLE]" for 808s and Mixtapes or any genre show. My angle: the 216's crypto-coding gamer rapper. I write bars, write code and I'm building a fantasy game universe, Order of the Akasha.
+I'd love for you to consider my newest singles for your hip-hop and genre shows. My angle: the 216's crypto-coding gamer rapper. I write bars, write code and I'm building a fantasy game universe, Order of the Akasha.
 
-Clean MP3: [LINK TO CLEAN MP3]
 ${LINKS}
 
 Happy to come on air for an interview or a live freestyle.
 
 ${SIGN}`},
- {id:"wruw", kind:"radio", name:"WRUW 91.1 FM · Studio-A-Rama", sub:"Case Western's station. Live in-studio sessions for local acts. Needs 3+ songs, bio, photo, website, contact.", tags:["radio","email"],
-  open:"https://wruw.org/wruw-is-now-accepting-submissions-for-this-years-studio-a-rama/", to:"studioarama@wruw.org",
-  subject:"Studio-A-Rama submission: Akashic Monk (Cleveland hip-hop)",
-  note:"Attach or link 3 songs and a photo. The bio, website and contact are below.",
-  body:`Hi WRUW,
-
-Submitting Akashic Monk for Studio-A-Rama and for airplay on Hip-Hop on the 216 Block.
-
-Artist: Akashic Monk (solo MC, Cleveland, OH)
-Songs (3): [SONG 1 LINK] · [SONG 2 LINK] · [SONG 3 LINK]
-Photo: [PHOTO LINK]
-Website: https://akashicmonk.blog
-
-Bio: Akashic Monk is an independent hip-hop artist from Cleveland and founder of Akashic Entertainment®. Since 2016 the Monk has released 41 records, including the 22-track album Static Signal, blending heavy 808s, spiritual lyricism and pop-rock energy with a builder's mindset: code, crypto and gaming. American Blueprint arrives Winter 2026.
-
-${LINKS}
-
-${SIGN}`},
- {id:"z1079", kind:"radio", name:"Z107.9 · Dope or Nope with Incognito", sub:"Cleveland's hip-hop station. Local artist segment. Clean, radio-ready music only. The page dates from 2018, so confirm it's still running.", tags:["radio","dm"],
-  open:"https://zhiphopcleveland.com/ohios-own-dope-or-nope-with-incognito/", to:"DM @z1079 on Instagram",
-  subject:"Dope or Nope submission: Akashic Monk",
-  body:`Yo Incognito and Z107.9! Cleveland artist Akashic Monk here. I want to be on Dope or Nope. Clean, radio-ready single "[CLEAN SINGLE]": [LINK]. 41 releases since 2016, new album American Blueprint this winter. Press kit: ${KIT} 🙏 216 stand up.`},
- {id:"wzak", kind:"radio", name:"93.1 WZAK · Z107.9 on-air talent", sub:"Urban radio. There's no public submission form, so tag the shows and DM the personalities with a clean single.", tags:["radio","dm"],
-  open:"https://wzakcleveland.com/", to:"DM on Instagram / Facebook",
-  subject:"Local artist spotlight: Akashic Monk",
-  body:`Hey! Cleveland's own Akashic Monk here: hip-hop with pop-rock energy, 41 releases, new album American Blueprint this winter. Would love a spin or a local spotlight for my clean single "[CLEAN SINGLE]": [LINK]. Press kit: ${KIT}. Appreciate you holding down the 216 🙏`},
  {id:"labelradar", kind:"label", name:"LabelRadar · demo pool for 3,900+ labels", sub:"Free. Upload a track, pick your best 20-second clip, then submit to the public pool (all labels) or privately to one label. Needs a free account + your audio file.", tags:["label","account"],
   open:"https://www.labelradar.com/",
   subject:null, body:`Akashic Monk: independent hip-hop artist from Cleveland, OH. 41 releases and 113 tracks since 2016; 22-track album Static Signal (2026); new album American Blueprint drops Winter 2026. Heavy 808s, spiritual lyricism, pop-rock crossover. The 216's crypto-coding gamer rapper: music, AI videos, crypto series and a game universe (Order of the Akasha), all self-built under Akashic Entertainment®.
@@ -148,10 +128,10 @@ ${SIGN}`},
 ${LINKS}`},
  {id:"groover", kind:"label", name:"Groover · hip-hop labels & A&R", sub:"Paid per contact (credits). Every label or curator must reply within 7 days or you get your credit back. Pick hip-hop/rap labels, 5–10 per single.", tags:["label","paid"],
   open:"https://groover.co/en/influencer/list/tags/hip-hop-rap/label/",
-  subject:null, body:`Hey! Akashic Monk from Cleveland, OH. "[SINGLE]" is the lead single from my new album American Blueprint (Winter 2026). I've built everything independently since 2016: 41 releases, 113 tracks, my own label Akashic Entertainment®, AI music videos, a 36-episode vlog, and a game universe, Order of the Akasha. I'm looking for a label or partner to scale the rollout. Press kit: ${KIT}`},
+  subject:null, body:`Hey! Akashic Monk from Cleveland, OH. My latest single "UnderDog Dreams" (Jul 2026) leads into my new album American Blueprint (Winter 2026): https://music.apple.com/us/album/underdog-dreams-single/6787865672 I've built everything independently since 2016: 41 releases, 113 tracks, my own label Akashic Entertainment®, AI music videos, a 36-episode vlog, and a game universe, Order of the Akasha. I'm looking for a label or partner to scale the rollout. Press kit: ${KIT}`},
  {id:"submithub", kind:"label", name:"SubmitHub · labels, blogs, playlists", sub:"Standard credits cost money; free credits get slower replies. Filter to hip-hop labels and blogs. Use the same pitch as Groover.", tags:["label","paid"],
   open:"https://www.submithub.com/",
-  subject:null, body:`Akashic Monk, Cleveland OH. "[SINGLE]" is the first taste of American Blueprint (Winter 2026). 41 independent releases since 2016, heavy 808s + spiritual lyricism + pop-rock hooks. Coder, gamer, crypto builder. Press kit: ${KIT}`},
+  subject:null, body:`Akashic Monk, Cleveland OH. New single "UnderDog Dreams" (Jul 2026): https://music.apple.com/us/album/underdog-dreams-single/6787865672 · new album American Blueprint lands Winter 2026. 41 independent releases since 2016, heavy 808s + spiritual lyricism + pop-rock hooks. Coder, gamer, crypto builder. Press kit: ${KIT}`},
  {id:"unitedmasters", kind:"label", name:"UnitedMasters · SELECT / PARTNER", sub:"Distribution where you keep 100% of masters and streaming royalties. SELECT is about $60/yr and includes brand & sync deal access. PARTNER (hands-on artist services) is invite-only, so grow on SELECT first.", tags:["label","apply"],
   open:"https://unitedmasters.com/en/artists",
   subject:null, body:`Artist bio for your profile: Akashic Monk is an independent hip-hop artist from Cleveland, Ohio, and founder of Akashic Entertainment®. Since 2016 the Monk has released 41 records, including the 22-track album Static Signal, blending heavy 808s, spiritual lyricism and pop-rock energy with a builder's mindset: code, crypto and gaming. American Blueprint arrives Winter 2026.`},
@@ -194,18 +174,6 @@ ${LINKS}`},
 Topics: what "independent" means when an artist owns the whole stack, where crypto actually helps creators and where it doesn't, and AI as a one-person label. I can close with a live freestyle.
 
 ${LINKS}`},
- {id:"nerds", kind:"podcast", name:"Nerds Sip Podcast", sub:"Gaming podcast that openly invites indie creators to promote their games.", tags:["email"],
-  open:"https://nerdssippodcast.itch.io", to:"nerdssip@gmail.com",
-  subject:"Rapper + game world builder: Order of the Akasha (and a live freestyle)",
-  body:`Hey Nerds Sip crew,
-
-I'm Akashic Monk, a hip-hop artist from Cleveland, Ohio, building Order of the Akasha: a fantasy universe of guardians, mystic warriors and a living library of all knowledge, told through music, film and gaming.
-
-Segment idea: you name the game you're playing, I freestyle a boss-fight verse about it on the spot. Then we talk soundtracking your own game world as an indie creator. New album American Blueprint drops this winter.
-
-${LINKS}
-
-${SIGN}`}
 ];
 
 const KEY="akm-outreach-sent";
