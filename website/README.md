@@ -18,7 +18,25 @@ Everything lives in the `CONFIG`, `MUSIC_VIDEOS`, `TABS`, `VLOGS` and `RELEASES`
 - **Album date:** change `CONFIG.albumRelease` when the release date is locked.
 - **New video:** add `{id:"YOUTUBE_ID", t:"Title", tag:"Official Video"}` to the top of `MUSIC_VIDEOS`.
 
-## Putting it live on akashicmonk.blog
-The current site is on Hostinger's AI Website Builder, which doesn't accept uploaded HTML. Options:
-1. **Hostinger Web Hosting** (hPanel → File Manager → `public_html`): upload `index.html` and the `assets/` folder.
-2. **GitHub Pages / Netlify / Vercel (free):** deploy this `website/` folder, then point the akashicmonk.blog DNS at it from Hostinger → Domains → DNS.
+## Putting it live on akashicmonk.blog (GitHub Pages)
+The site publishes automatically via `.github/workflows/pages.yml` whenever `website/` changes on the default branch. `website/CNAME` tells GitHub Pages to serve it at akashicmonk.blog.
+
+One-time setup:
+1. Merge the pull request.
+2. GitHub repo → **Settings → Pages → Source: GitHub Actions**. Under **Custom domain** enter `akashicmonk.blog`.
+3. Hostinger → **Domains → akashicmonk.blog → DNS / Nameservers**. Disconnect the domain from the Website Builder, then set:
+
+| Type  | Name | Points to                  |
+|-------|------|----------------------------|
+| A     | @    | 185.199.108.153            |
+| A     | @    | 185.199.109.153            |
+| A     | @    | 185.199.110.153            |
+| A     | @    | 185.199.111.153            |
+| AAAA  | @    | 2606:50c0:8000::153        |
+| AAAA  | @    | 2606:50c0:8001::153        |
+| AAAA  | @    | 2606:50c0:8002::153        |
+| AAAA  | @    | 2606:50c0:8003::153        |
+| CNAME | www  | orderoftheakasha.github.io |
+
+   Delete any other existing A / AAAA / ALIAS records on `@` (the old Hostinger builder ones).
+4. After DNS updates (minutes to a few hours), tick **Enforce HTTPS** in Settings → Pages.
