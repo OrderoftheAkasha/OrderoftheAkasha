@@ -45,7 +45,7 @@ If you're looking for the next Cleveland hip-hop artist to watch, start here.
 
 - **Apple Music:** https://music.apple.com/us/artist/akashic-monk/1258188977
 - **YouTube:** https://www.youtube.com/@Akashic_Monk
-- **Spotify:** search "Akashic Monk"
+- **Spotify:** https://open.spotify.com/artist/3snfgQNE6E39TxvvnfEdBe
 - **Instagram:** https://instagram.com/akashic_monk
 - **TikTok:** https://www.tiktok.com/@akashicmonk
 - **SoundCloud:** https://soundcloud.com/akashicmonk
