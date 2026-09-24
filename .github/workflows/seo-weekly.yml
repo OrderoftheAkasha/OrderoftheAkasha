@@ -1,0 +1,38 @@
+name: Weekly SEO refresh
+
+# Every Monday: pull the latest Akashic Monk releases from Apple Music,
+# update the website if anything is new, then redeploy (which also pings
+# search engines through IndexNow).
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  refresh:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Update catalog from Apple Music
+        run: python scripts/update_catalog.py
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Nothing new this week."
+            exit 0
+          fi
+          git config user.name "seo-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Weekly SEO refresh: new releases from Apple Music"
+          git push
+          gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"

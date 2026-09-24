@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akashic Monk — Official Site</title>
+<title>Akashic Monk | Cleveland Hip-Hop Artist &amp; Author · Official Site</title>
 <meta name="description" content="Akashic Monk — Cleveland hip-hop artist. New album AMERICAN BLUEPRINT coming Winter 2026. Stream Static Signal now on Apple Music, Spotify and YouTube.">
 <meta property="og:title" content="Akashic Monk — American Blueprint · Winter 2026">
 <meta property="og:description" content="Cleveland state of mind. New album AMERICAN BLUEPRINT coming this winter. Stream Static Signal now.">
@@ -57,7 +57,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .navcta{padding:10px 18px;font-size:12px;white-space:nowrap}
 .burger{display:none;width:34px;height:34px}
 .burger span{display:block;height:2px;background:var(--text);margin:7px 0}
-@media(max-width:1340px){
+@media(max-width:1420px){
   .links{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:rgba(7,7,11,.97);padding:24px 16px;gap:20px;transform:translateY(-130%);transition:.35s;font-size:18px}
   .links.open{transform:none}
   .burger{display:block}
@@ -235,6 +235,8 @@ footer p{color:var(--muted);font-size:13px}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.ticker div{animation:none}}
 </style>
+<link rel="canonical" href="https://akashicmonk.blog/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MusicGroup", "@id": "https://akashicmonk.blog/#artist", "name": "Akashic Monk", "url": "https://akashicmonk.blog/", "genre": ["Hip-Hop", "Rap", "Pop Rock"], "foundingLocation": {"@type": "Place", "name": "Cleveland, Ohio"}, "description": "Akashic Monk is an independent hip-hop artist and author from Cleveland, Ohio, founder of Akashic Entertainment®. 41 releases since 2016; new album American Blueprint arrives Winter 2026.", "image": "https://i.ytimg.com/vi/mS8weQ5LzUA/maxresdefault.jpg", "sameAs": ["https://open.spotify.com/artist/3snfgQNE6E39TxvvnfEdBe", "https://music.apple.com/us/artist/akashic-monk/1258188977", "https://www.youtube.com/@Akashic_Monk", "https://soundcloud.com/akashicmonk", "https://www.deezer.com/artist/12799289", "https://genius.com/15461980", "https://instagram.com/akashic_monk", "https://www.tiktok.com/@akashicmonk", "https://twitter.com/akashicmonk", "https://www.facebook.com/akshicmonk1111/", "https://www.amazon.com/dp/B0DRPLY7SG"], "album": [{"@type": "MusicAlbum", "name": "Static Signal", "datePublished": "2026-07-29", "numTracks": 22, "url": "https://music.apple.com/us/album/static-signal/6795564641"}, {"@type": "MusicAlbum", "name": "Thoughts of a Wizard", "datePublished": "2022-04-23", "numTracks": 11}, {"@type": "MusicAlbum", "name": "Soul Savior", "datePublished": "2020-06-10", "numTracks": 13}, {"@type": "MusicAlbum", "name": "DarkLight", "datePublished": "2020-01-01", "numTracks": 13}]}, {"@type": "Organization", "@id": "https://akashicmonk.blog/#label", "name": "Akashic Entertainment", "alternateName": "Gx3 ChaosRecords", "email": "gx3chaosrecords@gmail.com", "url": "https://akashicmonk.blog/"}, {"@type": "Book", "name": "Order of the Akasha: The Book of Scrolls", "author": {"@id": "https://akashicmonk.blog/#artist"}, "isbn": "9798305044096", "url": "https://www.amazon.com/dp/B0FLDZ5KNL", "bookFormat": "https://schema.org/Paperback"}, {"@type": "Book", "name": "Order of the Akasha: Origin's of Akir", "author": {"@id": "https://akashicmonk.blog/#artist"}, "datePublished": "2024-12-30", "url": "https://www.amazon.com/dp/B0DRYFC1GX", "bookFormat": "https://schema.org/EBook"}, {"@type": "WebSite", "@id": "https://akashicmonk.blog/#site", "url": "https://akashicmonk.blog/", "name": "Akashic Monk"}]}</script>
 </head>
 <body>
 
@@ -273,6 +275,8 @@ footer p{color:var(--muted);font-size:13px}
       <a href="#vlogs">Vlogs</a>
       <a href="#order">Order of the Akasha</a>
       <a href="#connect">Connect</a>
+      <a href="news/">News</a>
+      <a href="press.html">Press</a>
     </div>
     <a href="#album" class="btn solid navcta">Pre-Save</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -446,7 +450,7 @@ footer p{color:var(--muted);font-size:13px}
     <h2 class="title">Booking &amp; Press</h2>
     <div class="cgrid">
       <a href="mailto:booking@akashicmonk.com?subject=Booking%20Inquiry"><small>Booking &amp; Shows</small><b>booking@akashicmonk.com</b></a>
-      <a href="mailto:booking@akashicmonk.com?subject=Press%20%2F%20Playlist%20Inquiry"><small>Press &amp; Playlists</small><b>Interviews · Features · Placements</b></a>
+      <a href="press.html"><small>Press &amp; Playlists</small><b>View the Press Kit →</b></a>
       <div><small>Based In</small><b>Cleveland, OH — The 216</b></div>
     </div>
   </div>
@@ -531,6 +535,7 @@ const VLOGS = [
 ];
 
 // Full Apple Music catalog (newest first). n = track count.
+// AUTO-RELEASES:START (updated weekly by scripts/update_catalog.py)
 const RELEASES = [
   {t:"Static Signal",d:"2026-07-29",n:22,id:"6795564641",slug:"static-signal",art:"Music221/v4/b1/4c/2b/b14c2bfb-0ef4-9ccd-3e87-3bf02e73a66d/859743133885_cover.jpg"},
   {t:"UnderDog Dreams",d:"2026-07-10",n:1,id:"6787865672",slug:"underdog-dreams-single",art:"Music221/v4/96/16/b1/9616b17c-947d-ccac-a7c6-1f796d790403/859741918101_cover.jpg"},
@@ -574,6 +579,7 @@ const RELEASES = [
   {t:"Road to 2020 Hits & Singles",d:"2018-09-26",n:11,id:"1438151248",slug:"road-to-2020-hits-singles",art:"Music128/v4/b4/66/76/b46676df-a842-9441-cfcd-40bce1a606b2/859728825538_cover.jpg"},
   {t:"Bandz in My Pocket",d:"2017-07-07",n:1,id:"1258188908",slug:"bandz-in-my-pocket-single",art:"Music116/v4/69/2e/41/692e415a-3d8d-894f-c11f-da708f8aa3ab/859721917506_cover.jpg"}
 ];
+// AUTO-RELEASES:END
 /* ============================================================ */
 
 const $ = s => document.querySelector(s);
