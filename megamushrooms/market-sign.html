@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Mega Mushrooms Market Prices</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:Letter;margin:0}
+:root{--forest:#1f3a2e;--moss:#4f6b3a;--cream:#f6f1e6;--bark:#6b4a2f;--gold:#c8952f;--line:#d9d0bd}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Work Sans',Arial,sans-serif}
+.page{width:8.5in;height:11in;padding:.6in;background:var(--cream);display:flex;flex-direction:column}
+h1{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:72px;line-height:.9;color:var(--forest);margin:0;text-align:center}
+.sub{text-align:center;font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--bark);margin:12px 0 30px}
+.item{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center;background:#fff;border:2px solid var(--forest);border-left:14px solid var(--moss);padding:22px 26px;margin-bottom:18px}
+.item.lm{border-left-color:var(--gold)} .item.ch{border-left-color:var(--bark)}
+.item h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:46px;color:var(--forest);margin:0;line-height:1}
+.item p{margin:6px 0 0;font-size:15px;color:#4a463c}
+.price{text-align:center;font-variant-numeric:tabular-nums}
+.price b{display:block;font-size:54px;color:var(--forest);line-height:1}
+.price span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6a6558;font-weight:600}
+.foot{margin-top:auto;text-align:center;font-size:18px;color:var(--forest)}
+.foot b{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:30px;display:block;margin-bottom:8px}
+.fill{display:inline-block;border-bottom:2px solid var(--forest);width:3in;height:20px;vertical-align:bottom}
+</style></head><body>
+<section class="page">
+  <h1>Mega<br>Mushrooms</h1>
+  <div class="sub">Grown in Cleveland · Picked this week</div>
+  <div class="item lm"><div><h2>Lion's Mane</h2><p>Sweet &amp; meaty. Sear like scallops or make "crab" cakes.</p></div><div class="price"><b>$10</b><span>½ lb</span></div><div class="price"><b>$20</b><span>1 lb</span></div></div>
+  <div class="item ch"><div><h2>Chestnut</h2><p>Nutty &amp; crisp. Perfect for risotto, pasta, stir-fry.</p></div><div class="price"><b>$9</b><span>½ lb</span></div><div class="price"><b>$18</b><span>1 lb</span></div></div>
+  <div class="item"><div><h2>Oyster</h2><p>Savory &amp; velvety. Crisps up for tacos &amp; "fried chicken."</p></div><div class="price"><b>$7</b><span>½ lb</span></div><div class="price"><b>$14</b><span>1 lb</span></div></div>
+  <div class="foot"><b>Buy any 3 lbs, save $5</b>Ask for a free recipe card · Chefs &amp; stores: ask for our wholesale menu<br><br>Follow &amp; order: <span class="fill"></span></div>
+</section>
+</body></html>
