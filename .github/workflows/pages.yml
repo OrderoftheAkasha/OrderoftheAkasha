@@ -34,3 +34,11 @@ jobs:
           path: website
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify search engines (IndexNow)
+        continue-on-error: true
+        run: |
+          URLS=$(grep -o '<loc>[^<]*</loc>' website/sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"akashicmonk.blog\",\"key\":\"a94c1acdcf469f29091a1ef8512e21d0\",\"keyLocation\":\"https://akashicmonk.blog/a94c1acdcf469f29091a1ef8512e21d0.txt\",\"urlList\":$URLS}" \
+            -w "\nIndexNow HTTP %{http_code}\n"
