@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News | Akashic Monk</title><meta name="description" content="News, stories and updates from Cleveland hip-hop artist and author Akashic Monk: music, the Order of the Akasha books, the game, and American Blueprint.">
+<link rel="canonical" href="https://akashicmonk.blog/news/">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070b;--bg2:#0e0e15;--card:#14141d;--line:#24243a;--text:#f4f1ea;--muted:#9a97a8;--gold:#f5c542;--red:#e63946;--blueprint:#0b3d91;
+--display:'Anton',Impact,sans-serif;--body:'Hanken Grotesk',system-ui,sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+header.bar{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,7,11,.9);backdrop-filter:blur(12px);z-index:5}
+header.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:12px}
+.logo{font-family:var(--display);font-size:22px;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.logo b{color:var(--gold);font-weight:400}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:12px;border:2px solid var(--text);text-decoration:none;transition:.2s;white-space:nowrap}
+.btn:hover{background:var(--text);color:var(--bg)}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#111}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+@media(max-width:480px){header.bar .btn:not(.solid){display:none}.logo{font-size:19px}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--display);font-size:clamp(56px,10vw,120px);line-height:.88;text-transform:uppercase;margin:10px 0 18px}
+.hero p{color:#d8d4cc;font-size:18px;max-width:560px}
+.hero img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-size:clamp(34px,5vw,56px);text-transform:uppercase;line-height:.95;margin-bottom:24px}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.facts div{background:var(--card);border:1px solid var(--line);padding:18px}
+.facts small{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.facts b{display:block;font-size:17px;margin-top:4px}
+.bio p{font-size:17px;color:#dcd8d0;margin-bottom:16px;max-width:760px}
+.bio .short{background:var(--blueprint);padding:22px;border-left:4px solid var(--gold);margin:22px 0;max-width:760px}
+.bio .short small{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:#cfe0ff}
+.copy{float:right;font-family:var(--mono);font-size:10px;letter-spacing:.14em;border:1px solid rgba(255,255,255,.5);padding:4px 8px;cursor:pointer;background:none;color:#fff}
+.tracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.tracks a{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);padding:12px;text-decoration:none;transition:.2s}
+.tracks a:hover{border-color:var(--gold)}
+.tracks img{width:72px;height:72px;object-fit:cover}
+.tracks b{display:block}
+.tracks small{color:var(--muted);font-size:13px}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.vids a{text-decoration:none}
+.vids img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.vids b{display:block;margin-top:8px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.photos{grid-template-columns:1fr}}
+.photos a{position:relative;display:block}
+.photos img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.photos span{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);font-size:11px;padding:4px 8px;font-family:var(--mono);letter-spacing:.1em}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{padding:10px 16px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-weight:700;font-size:14px}
+.links a:hover{border-color:var(--gold);color:var(--gold)}
+.contact{background:var(--gold);color:#111;padding:40px;margin:56px 0}
+.contact h2{margin-bottom:10px}
+.contact a{font-family:var(--display);font-size:clamp(24px,4vw,40px);text-decoration:none;word-break:break-word}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px}
+@media print{header.bar,.copy{display:none}body{background:#fff;color:#111}.facts div,.tracks a,.links a{background:#fff;border-color:#ccc}.bio p,.hero p{color:#222}.bio .short{background:#eef3ff;color:#111}}
+.newslist{display:grid;gap:16px;padding:40px 0}.newslist a{display:block;background:var(--card);border:1px solid var(--line);padding:22px;text-decoration:none}.newslist a:hover{border-color:var(--gold)}.newslist b{display:block;font-family:var(--display);font-size:28px;line-height:1.05;text-transform:uppercase;margin:6px 0}.newslist p{color:var(--muted);margin:0}</style></head><body>
+<header class="bar"><div class="wrap"><a class="logo" href="../index.html">AKASHIC <b>MONK</b></a><a class="btn solid" href="../press.html">Press Kit</a></div></header>
+<main class="wrap"><h1>News</h1><div class="newslist"><a href="akashic-monk-order-of-the-akasha-book-of-scrolls.html"><span class="eyebrow">2026-09-24</span><b>Cleveland Rapper Akashic Monk Writes a Fantasy Saga: Inside Order of the Akasha: The Book of Scrolls</b><p>Most rappers put their stories into sixteen bars. Cleveland&#x27;s Akashic Monk put one into a novel.</p></a><a href="darklight-album-darklight-halo-one-universe.html"><span class="eyebrow">2026-09-26</span><b>From DarkLight to the DarkLight Halo: How Akashic Monk&#x27;s Albums and Novels Tell One Story</b><p>In 2020, Cleveland hip-hop artist Akashic Monk released DarkLight, a 13-track project with songs like &quot;The TakeOver,&quot; &quot;Black Budget,&quot; &quot;New Me&quot; and &quot;Kiss of</p></a><a href="order-of-the-akasha-game-franchise.html"><span class="eyebrow">2026-09-28</span><b>Order of the Akasha: An Independent Artist&#x27;s Plan to Turn a Rap Universe Into a Game Franchise</b><p>Some indie game projects start with a prototype. Order of the Akasha started with a mythology, two novels and a decade of music.</p></a><a href="gx3-chaosrecords-akashic-entertainment-label-story.html"><span class="eyebrow">2026-09-30</span><b>From Gx3 ChaosRecords to Akashic Entertainment®: The Independent Label Behind Akashic Monk</b><p>Long before streaming playlists and AI tools, Akashic Monk decided not to wait for a label. The Cleveland artist built one.</p></a><a href="10-things-to-know-about-akashic-monk.html"><span class="eyebrow">2026-10-02</span><b>10 Things to Know About Akashic Monk, Cleveland&#x27;s Rapper, Author and World-Builder</b><p>1. Cleveland-born and built. Akashic Monk is an independent hip-hop artist from Cleveland, Ohio: the 216.</p></a></div></main><footer><div class="wrap">© 2026 Akashic Monk · Akashic Entertainment®</div></footer></body></html>
